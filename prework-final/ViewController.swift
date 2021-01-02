@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var sliderLabel: UILabel!
     
-    
+    @IBOutlet weak var splitTotalLabel: UILabel!
+    @IBOutlet weak var splitField: UITextField!
     
     
     override func viewDidLoad() {
@@ -29,12 +30,15 @@ class ViewController: UIViewController {
     
     @IBAction func calculateTip(_ sender: Any) {
         let bill = Double(billField.text!) ?? 0
+        let numOfPeople = Int(splitField.text!) ?? 1
+
         
         let tipPercentages = [0.15, 0.18, 0.2]
         
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         
         let total = bill + tip
+        let totalEach = total / Double(numOfPeople)
         
         let position = tipControl.selectedSegmentIndex
         if(position == 0) {
@@ -48,22 +52,29 @@ class ViewController: UIViewController {
         sliderLabel.text = String(Int(tipSlider.value))
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        splitTotalLabel.text = String(format: "$%.2f", totalEach)
+
     }
     
     @IBAction func sliderCalculateTip(_ sender: UISlider) {
         let bill = Double(billField.text!) ?? 0
         let currentValue = Int(sender.value)
+        let numOfPeople = Int(splitField.text!) ?? 1
         
         let percent = Double(currentValue) / 100
         
         let tip = bill * percent
         let total = tip + bill
+        let totalEach = total / Double(numOfPeople)
         
         sliderLabel.text = String(Int(tipSlider.value))
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        splitTotalLabel.text = String(format: "$%.2f", totalEach)
         
     }
+    
+    
     
     
     
