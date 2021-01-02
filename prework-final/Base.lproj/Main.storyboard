@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tip Calculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="prework_final" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,7 +140,7 @@
                             <constraint firstItem="nO9-DN-eoQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wIj-aG-sjv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dfk-Kf-Hof"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="dfk-Kf-Hof"/>
                     <connections>
                         <outlet property="billField" destination="c9e-lk-5MF" id="obX-Vl-8Db"/>
                         <outlet property="sliderLabel" destination="SiR-wO-oX9" id="ZRa-aN-SY3"/>
