@@ -53,6 +53,7 @@
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="nO9-DN-eoQ">
                                 <rect key="frame" x="-2" y="190" width="379" height="31"/>
+                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderCalculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="KWL-vF-rDP"/>
                                 </connections>
@@ -108,6 +109,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="md0-hu-37Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="19M-an-Qbs"/>
                             <constraint firstItem="c9e-lk-5MF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1oM-G2-Qy9"/>
@@ -138,6 +140,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bNP-n0-DG2" secondAttribute="trailing" id="srB-nw-DLO"/>
                             <constraint firstItem="nO9-DN-eoQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wIj-aG-sjv"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Phk-kI-gj9" appends="YES" id="nq0-DK-pPj"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="dfk-Kf-Hof"/>
                     <connections>
@@ -152,6 +157,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Phk-kI-gj9">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="Ql3-Jb-Cev"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="972" y="76.847290640394093"/>
         </scene>
